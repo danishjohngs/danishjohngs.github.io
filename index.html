@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Danish John G S - Aspiring DevOps Engineer | Linux, AWS, Docker, CI/CD, Automation, and Cloud Security Portfolio.">
-    <meta name="keywords" content="Danish John GS, Danish John G S, DevOps Engineer, AWS, Docker, Linux, Terraform, Cloud Engineering, DevSecOps">
-    <meta name="author" content="Danish John G S">
-    <title>Danish John G S | Aspiring DevOps Engineer</title>
     
-    <!-- Google Fonts -->
+    <!-- MANDATORY SEARCH KEYWORD TARGETING -->
+    <title>Danish John G S | Danish John | Danish DevOps Engineer</title>
+    <meta name="description" content="Official portfolio of Danish John G S (Danish John / Danish DevOps / Danish John GS). Aspiring DevOps Engineer, Cloud Security, Linux, AWS, Docker, and CI/CD automation specialist.">
+    <meta name="keywords" content="danish john, danish john gs, danish john g s, danish devops, danish john devops, devops engineer, cloud security">
+    <meta name="author" content="Danish John G S">
+    
+    <!-- Fonts & FontAwesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --border-color: #30363d;
-            --text-main: #c9d1d9;
-            --text-heading: #ffffff;
-            --accent-blue: #58a6ff;
-            --accent-green: #3fb950;
-            --quote-bg: #1c2128;
-            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-code: 'Fira Code', monospace;
+            --bg: #090d16;
+            --surface: #111726;
+            --surface-hover: #182035;
+            --border: #1e293b;
+            --border-highlight: #334155;
+            --primary: #38bdf8;
+            --accent: #4ade80;
+            --purple: #a855f7;
+            --orange: #fb923c;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'Fira Code', monospace;
         }
 
         * {
@@ -34,325 +40,569 @@
         }
 
         body {
-            background-color: var(--bg-color);
+            background-color: var(--bg);
             color: var(--text-main);
-            font-family: var(--font-main);
+            font-family: var(--font-sans);
             line-height: 1.6;
             padding: 2rem 1rem;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        /* Header Section */
-        header {
+        /* Terminal Window Frame */
+        .terminal-window {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
             margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
         }
 
-        h1 {
-            color: var(--text-heading);
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+        .terminal-header {
+            background: #0b0f19;
+            padding: 0.8rem 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
         }
 
-        .subtitle {
-            color: var(--accent-blue);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+        .terminal-dots {
+            display: flex;
+            gap: 8px;
         }
 
-        /* Callout / Quote Box */
-        blockquote {
-            background: var(--quote-bg);
-            border-left: 4px solid var(--accent-blue);
-            padding: 1rem;
-            border-radius: 0 6px 6px 0;
-            margin: 1.5rem 0;
-            font-size: 0.95rem;
-            color: var(--text-heading);
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #22c55e; }
+
+        .terminal-title {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
-        blockquote strong {
-            color: var(--accent-blue);
+        /* Profile Header */
+        .hero {
+            padding: 2.5rem 2rem;
+            background: linear-gradient(180deg, rgba(56, 189, 248, 0.05) 0%, rgba(0,0,0,0) 100%);
+            border-bottom: 1px solid var(--border);
         }
 
-        /* Section Cards */
-        .section-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        h2 {
-            color: var(--text-heading);
-            font-size: 1.3rem;
+        .command-line {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 0.9rem;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .command-line span {
+            color: var(--primary);
         }
 
-        ul li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.6rem;
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.5px;
         }
 
-        ul li::before {
-            content: "•";
-            color: var(--accent-blue);
-            font-weight: bold;
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin: 0.4rem 0 1rem 0;
+            font-family: var(--font-mono);
+        }
+
+        .hero-description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 750px;
+        }
+
+        /* Callout / Philosophy Box */
+        .philosophy-box {
+            background: rgba(30, 41, 59, 0.5);
+            border-left: 3px solid var(--primary);
+            padding: 1.2rem;
+            margin-top: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .philosophy-title {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--primary);
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+        }
+
+        .philosophy-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-style: italic;
+        }
+
+        /* Navigation Tabs */
+        .tabs {
+            display: flex;
+            background: #0b0f19;
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 1rem 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            background: var(--surface);
+        }
+
+        /* Tab Content Panels */
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Focus & Skill Grid */
+        .grid-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .focus-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .focus-card:hover {
+            border-color: var(--border-highlight);
+            transform: translateY(-2px);
+            background: var(--surface-hover);
+        }
+
+        .focus-card i {
+            color: var(--primary);
             font-size: 1.2rem;
-            position: absolute;
-            left: 0.2rem;
-            top: -0.1rem;
+            margin-top: 0.2rem;
         }
 
         /* Badges Styling */
-        .badge-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .badge-group-title {
-            font-weight: 600;
-            color: var(--text-heading);
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .badges {
+        .badge-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.8rem;
+        }
+
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
             gap: 0.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .badges img {
-            height: 28px;
-            border-radius: 4px;
-        }
-
-        /* Flow Process styling */
-        .workflow-box {
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
+            background: #1e293b;
+            border: 1px solid var(--border-highlight);
+            padding: 0.4rem 0.8rem;
             border-radius: 6px;
-            padding: 1rem;
-            font-family: var(--font-code);
-            font-size: 0.88rem;
-            color: var(--accent-green);
-            text-align: center;
-            word-break: break-word;
-        }
-
-        /* Projects List */
-        .project-item {
-            margin-bottom: 1.2rem;
-        }
-
-        .project-item h3 {
-            font-size: 1.05rem;
-            color: var(--text-heading);
-            margin-bottom: 0.3rem;
-        }
-
-        .project-item p {
-            font-size: 0.95rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
             color: var(--text-main);
         }
 
-        /* Buttons & Links */
-        a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            transition: color 0.2s;
+        .section-title {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-family: var(--font-mono);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        a:hover {
-            text-decoration: underline;
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            gap: 1.2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.2s;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary);
+            background: var(--surface-hover);
+        }
+
+        .project-card h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Workflow Box */
+        .workflow-container {
+            background: #0b0f19;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            word-break: break-word;
+        }
+
+        /* Buttons & CTA */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-block;
-            background: var(--accent-blue);
-            color: #0d1117;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: #090d16;
             font-weight: 600;
-            padding: 0.6rem 1.2rem;
+            padding: 0.7rem 1.4rem;
             border-radius: 6px;
-            margin-top: 0.5rem;
-            transition: opacity 0.2s;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 0.9rem;
         }
 
         .btn:hover {
             opacity: 0.9;
-            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-highlight);
+        }
+
+        .btn-outline:hover {
+            background: var(--surface-hover);
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            color: #8b949e;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
             font-size: 0.85rem;
+            padding: 1rem 0;
         }
 
-        @media (max-width: 600px) {
-            body { padding: 1rem; }
-            h1 { font-size: 1.75rem; }
-            .subtitle { font-size: 1rem; }
+        @media (max-width: 650px) {
+            body { padding: 0.5rem; }
+            .hero { padding: 1.5rem 1rem; }
+            h1 { font-size: 1.8rem; }
+            .tab-btn { padding: 0.8rem 1rem; font-size: 0.8rem; }
+            .tab-content { padding: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Header -->
-        <header>
-            <h1>Hi, I'm Danish John G S 👋</h1>
-            <div class="subtitle">Aspiring DevOps Engineer | Linux • AWS • Docker • CI/CD • Automation</div>
-            <p>I'm a BCA graduate building practical skills in <strong>DevOps, Cloud Engineering, Infrastructure Automation, and Cloud Security</strong>.</p>
-            <p style="margin-top: 0.5rem;">I learn by building systems, investigating failures, troubleshooting problems, and documenting what I discover. My goal is to become an engineer who can deploy reliable infrastructure, automate repetitive work, and integrate security into the development lifecycle.</p>
+        <!-- Terminal Window Frame -->
+        <div class="terminal-window">
+            
+            <!-- Terminal Header Controls -->
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <div class="terminal-title">danishjohngs@devops-node:~</div>
+                <div><i class="fa-solid fa-terminal" style="color: var(--text-muted); font-size: 0.8rem;"></i></div>
+            </div>
 
-            <blockquote>
-                <strong>My engineering approach:</strong> Understand the problem. Investigate the cause. Build a solution. Test failure scenarios. Verify the fix. Automate and document the result.
-            </blockquote>
-        </header>
+            <!-- Profile Hero Banner -->
+            <div class="hero">
+                <div class="command-line">
+                    <i class="fa-solid fa-angle-right"></i> whoami <span>--role devops-engineer</span>
+                </div>
+                <h1>Danish John G S 👋</h1>
+                <!-- Keyword Optimization Subtitle -->
+                <div class="hero-subtitle">Danish John | Danish DevOps & Cloud Security Engineer</div>
+                <p class="hero-description">
+                    BCA graduate building practical engineering skills in DevOps, Cloud Infrastructure Automation, and DevSecOps. Focused on deploying reliable infrastructure, troubleshooting failures, and automating repetitive work.
+                </p>
 
-        <!-- Current Focus -->
-        <section class="section-card">
-            <h2>🚀 Current Focus</h2>
-            <ul>
-                <li>🐧 Linux administration, permissions, processes, and troubleshooting</li>
-                <li>🌐 Networking fundamentals, DNS, TCP/IP, and connectivity debugging</li>
-                <li>🔀 Git, GitHub, and version control workflows</li>
-                <li>🐚 Bash scripting and Python automation</li>
-                <li>☁️ AWS cloud infrastructure and IAM fundamentals</li>
-                <li>🐳 Docker and containerization</li>
-                <li>🔄 CI/CD pipelines and automated testing</li>
-                <li>🏗️ Infrastructure as Code with Terraform</li>
-                <li>🔐 Cloud security and DevSecOps fundamentals</li>
-            </ul>
-        </section>
+                <div class="philosophy-box">
+                    <div class="philosophy-title"><i class="fa-solid fa-microchip"></i> Engineering Mindset</div>
+                    <div class="philosophy-text">
+                        "Understand the problem → Investigate the cause → Build a solution → Test failure scenarios → Verify the fix → Automate & Document."
+                    </div>
+                </div>
 
-        <!-- Technologies -->
-        <section class="section-card">
-            <h2>🛠️ Technologies</h2>
-
-            <div class="badge-group">
-                <div class="badge-group-title">Systems & Scripting</div>
-                <div class="badges">
-                    <img src="https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black" alt="Linux">
-                    <img src="https://img.shields.io/badge/Bash-121011?style=flat&logo=gnubash&logoColor=white" alt="Bash">
-                    <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
+                <div class="btn-group">
+                    <a href="https://github.com/danishjohngs" target="_blank" class="btn">
+                        <i class="fa-brands fa-github"></i> GitHub Profile
+                    </a>
+                    <a href="https://www.linkedin.com/in/danishjohngs/" target="_blank" class="btn btn-outline">
+                        <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+                    </a>
                 </div>
             </div>
 
-            <div class="badge-group">
-                <div class="badge-group-title">Version Control & CI/CD</div>
-                <div class="badges">
-                    <img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white" alt="Git">
-                    <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white" alt="GitHub Actions">
+            <!-- Interactive Tab Bar -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'focus')">
+                    <i class="fa-solid fa-compass"></i> Current Focus
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'stack')">
+                    <i class="fa-solid fa-layer-group"></i> Tech Stack
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'projects')">
+                    <i class="fa-solid fa-flask"></i> Engineering Labs
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'learning')">
+                    <i class="fa-solid fa-brain"></i> Workflow & Goals
+                </button>
+            </div>
+
+            <!-- Tab 1: Current Focus -->
+            <div id="focus" class="tab-content active">
+                <div class="section-title"><i class="fa-solid fa-rocket" style="color: var(--primary);"></i> Primary Areas of Study</div>
+                <div class="grid-list">
+                    <div class="focus-card">
+                        <i class="fa-brands fa-linux"></i>
+                        <div>
+                            <strong>Linux Administration</strong>
+                            <p style="font-size:0.85rem; color: var(--text-muted);">Permissions, processes, filesystems, and troubleshooting.</p>
+                        </div>
+                    </div>
+                    <div class="focus-card">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <div>
+                            <strong>Networking Fundamentals</strong>
+                            <p style="font-size:0.85rem; color: var(--text-muted);">DNS, TCP/IP, routing, and connectivity debugging.</p>
+                        </div>
+                    </div>
+                    <div class="focus-card">
+                        <i class="fa-brands fa-aws"></i>
+                        <div>
+                            <strong>AWS Infrastructure</strong>
+                            <p style="font-size:0.85rem; color: var(--text-muted);">Cloud architecture, IAM security, EC2, VPC, and S3.</p>
+                        </div>
+                    </div>
+                    <div class="focus-card">
+                        <i class="fa-brands fa-docker"></i>
+                        <div>
+                            <strong>Containerization</strong>
+                            <p style="font-size:0.85rem; color: var(--text-muted);">Docker, image optimization, multi-stage builds, container security.</p>
+                        </div>
+                    </div>
+                    <div class="focus-card">
+                        <i class="fa-solid fa-code-branch"></i>
+                        <div>
+                            <strong>CI/CD & Automation</strong>
+                            <p style="font-size:0.85rem; color: var(--text-muted);">GitHub Actions pipelines, automated testing, and Bash scripting.</p>
+                        </div>
+                    </div>
+                    <div class="focus-card">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <strong>DevSecOps & IaC</strong>
+                            <p style="font-size:0.85rem; color: var(--text-muted);">Terraform, Trivy vulnerability scanning, and IAM policies.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="badge-group">
-                <div class="badge-group-title">Cloud & Containers</div>
-                <div class="badges">
-                    <img src="https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonwebservices&logoColor=white" alt="AWS">
-                    <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white" alt="Docker">
+            <!-- Tab 2: Tech Stack -->
+            <div id="stack" class="tab-content">
+                <div class="section-title"><i class="fa-solid fa-code" style="color: var(--accent);"></i> Demonstrated Tools</div>
+                
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                    Technologies I actively use in practical engineering labs and personal setups:
+                </p>
+
+                <div style="margin-bottom: 1.2rem;">
+                    <div style="font-size:0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Systems & Scripting</div>
+                    <div class="badge-container">
+                        <span class="tech-badge"><i class="fa-brands fa-linux"></i> Linux</span>
+                        <span class="tech-badge"><i class="fa-solid fa-terminal"></i> Bash</span>
+                        <span class="tech-badge"><i class="fa-brands fa-python"></i> Python</span>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.2rem;">
+                    <div style="font-size:0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Version Control & CI/CD</div>
+                    <div class="badge-container">
+                        <span class="tech-badge"><i class="fa-brands fa-git-alt"></i> Git</span>
+                        <span class="tech-badge"><i class="fa-brands fa-github"></i> GitHub Actions</span>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.2rem;">
+                    <div style="font-size:0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Cloud & Containers</div>
+                    <div class="badge-container">
+                        <span class="tech-badge"><i class="fa-brands fa-aws"></i> AWS Cloud</span>
+                        <span class="tech-badge"><i class="fa-brands fa-docker"></i> Docker</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div style="font-size:0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Infrastructure & Security</div>
+                    <div class="badge-container">
+                        <span class="tech-badge"><i class="fa-solid fa-cubes"></i> Terraform</span>
+                        <span class="tech-badge"><i class="fa-solid fa-shield-virus"></i> Trivy Scanner</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="badge-group">
-                <div class="badge-group-title">Infrastructure & Security</div>
-                <div class="badges">
-                    <img src="https://img.shields.io/badge/Terraform-844FBA?style=flat&logo=terraform&logoColor=white" alt="Terraform">
-                    <img src="https://img.shields.io/badge/Trivy-1904DA?style=flat&logo=aquasecurity&logoColor=white" alt="Trivy">
+            <!-- Tab 3: Projects -->
+            <div id="projects" class="tab-content">
+                <div class="section-title"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--purple);"></i> Hands-on Engineering Labs</div>
+                
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3><i class="fa-brands fa-linux" style="color: var(--orange);"></i> Linux System Administration Labs</h3>
+                        <p>Practical scenarios focused on Linux process management, filesystem hierarchy, user/group permissions, shell scripting automation, and system diagnostics.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3><i class="fa-brands fa-aws" style="color: var(--primary);"></i> Cloud Infrastructure Deployments</h3>
+                        <p>AWS infrastructure environments emphasizing secure IAM access policies, VPC networking, EC2 web server provisioning, and CloudWatch monitoring.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3><i class="fa-solid fa-rotate" style="color: var(--accent);"></i> Automated CI/CD & Security Scanning</h3>
+                        <p>End-to-end GitHub Actions pipelines designed for build verification, automated testing, container image building, and vulnerability scanning with Trivy.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3><i class="fa-brands fa-docker" style="color: var(--primary);"></i> Containerization & Hardening</h3>
+                        <p>Docker container optimizations, multi-stage builds for small image sizes, non-root user execution, and container security compliance.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem; text-align: center;">
+                    <a href="https://github.com/danishjohngs?tab=repositories" target="_blank" class="btn btn-outline">
+                        <i class="fa-solid fa-folder-open"></i> Browse All Repositories on GitHub
+                    </a>
                 </div>
             </div>
 
-            <p style="font-size: 0.85rem; color: #8b949e; font-style: italic;">*I add technologies to my demonstrated skill set as I gain practical experience with them.</p>
-        </section>
+            <!-- Tab 4: Workflow & Goals -->
+            <div id="learning" class="tab-content">
+                <div class="section-title"><i class="fa-solid fa-diagram-project" style="color: var(--accent);"></i> Engineering Workflow</div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    I focus on scenario-based learning—building real infrastructure, inducing controlled failures, and fixing root causes:
+                </p>
 
-        <!-- Projects -->
-        <section class="section-card">
-            <h2>🔨 Projects & Engineering Labs that I'm building</h2>
+                <div class="workflow-container">
+                    Problem ➔ Investigate ➔ Build ➔ Break ➔ Troubleshoot ➔ Fix ➔ Verify ➔ Automate ➔ Document
+                </div>
 
-            <div class="project-item">
-                <h3>🐧 Linux Engineering Labs</h3>
-                <p>Practical exercises covering permissions, users and groups, processes, filesystem management, backups, and troubleshooting.</p>
+                <div class="section-title" style="margin-top: 2rem;"><i class="fa-solid fa-bullseye" style="color: var(--orange);"></i> Target Roles</div>
+                <ul style="list-style-type: none; padding-left: 0.5rem; color: var(--text-main);">
+                    <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> DevOps Engineer (Junior / Entry-Level)</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> Cloud Support & Operations Engineer</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> Long-Term Path: DevSecOps & Cloud Security Engineering</li>
+                </ul>
             </div>
 
-            <div class="project-item">
-                <h3>☁️ Cloud Infrastructure Projects</h3>
-                <p>Hands-on AWS projects focused on infrastructure deployment, access control, monitoring, and secure configuration.</p>
-            </div>
-
-            <div class="project-item">
-                <h3>🔄 CI/CD & DevSecOps</h3>
-                <p>Projects exploring automated builds, testing, security scanning, and deployment workflows.</p>
-            </div>
-
-            <div class="project-item">
-                <h3>🐳 Container Security</h3>
-                <p>Experiments with Docker, container configuration, image scanning, and secure deployment practices.</p>
-            </div>
-
-            <a href="https://github.com/danishjohngs?tab=repositories" target="_blank" class="btn">Explore my Repositories →</a>
-        </section>
-
-        <!-- How I Learn -->
-        <section class="section-card">
-            <h2>🧠 How I Learn</h2>
-            <p style="margin-bottom: 0.8rem;">I follow a practical, scenario-based engineering workflow:</p>
-            <div class="workflow-box">
-                Problem → Investigate → Build → Break → Troubleshoot → Fix → Verify → Automate → Document
-            </div>
-            <p style="margin-top: 0.8rem;">I focus on understanding <em>why</em> something works, how it fails, how to diagnose it, and how to prevent the same issue from recurring.</p>
-        </section>
-
-        <!-- Career Goal & Connect -->
-        <section class="section-card">
-            <h2>🎯 Career Goal</h2>
-            <p style="margin-bottom: 0.5rem;">I'm pursuing entry-level opportunities in:</p>
-            <ul>
-                <li>DevOps Engineering</li>
-                <li>Cloud Support and Cloud Operations</li>
-                <li>Junior Cloud Engineering</li>
-            </ul>
-            <p style="margin-top: 0.8rem;">My long-term direction is <strong>DevSecOps and Cloud Security Engineering</strong>, combining automation, infrastructure reliability, and security.</p>
-        </section>
-
-        <section class="section-card">
-            <h2>🤝 Connect With Me</h2>
-            <ul>
-                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/danishjohngs/" target="_blank">Danish John G S</a></li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/danishjohngs" target="_blank">@danishjohngs</a></li>
-            </ul>
-            <p style="margin-top: 0.8rem;">I'm interested in practical engineering projects, automation, cloud infrastructure, and opportunities to learn from experienced engineers.</p>
-        </section>
+        </div>
 
         <!-- Footer -->
         <footer>
-            <p>&copy; Danish John G S. Built for GitHub Pages.</p>
+            <p>Danish John GS Portfolio • Built for GitHub Pages • Danish John G S &copy; 2026</p>
         </footer>
     </div>
 
+    <!-- Tab Switching Logic -->
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
